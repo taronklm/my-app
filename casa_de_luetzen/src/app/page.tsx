@@ -22,9 +22,9 @@ export default function Home() {
   }, []);
 
   return (
-      <div className="container m-auto">
+      <div className="container p-4">
         <div className="flex flex-col">
-          <h1 className="text-center">Wöchentlicher Putzplan</h1>
+          <h1 className="text-center mb-5 font-bold">Wöchentlicher Putzplan</h1>
           <table className="table-auto border border-slate-500">
               <thead>
                   <tr>
@@ -37,7 +37,7 @@ export default function Home() {
               <tbody>
                   {putzplan.map((row, index) => (
                       <tr key={index}>
-                          <td className="border border-slate-700 text-center">{row.Woche}</td>
+                          <td className="border border-slate-700 text-center font-bold">{row.Woche}</td>
                           <td className="border border-slate-700 text-center">{row.Flur}</td>
                           <td className="border border-slate-700 text-center">{row.Bad}</td>
                           <td className="border border-slate-700 text-center">{row.Küche}</td>
