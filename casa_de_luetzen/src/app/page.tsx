@@ -83,21 +83,29 @@ export default function Home() {
               </tbody>
           </table>
         </div>
-        <div>
+        <div className="flex flex-col">
             <h1>Wöchentlicher Putzplan</h1>
             <h2>Einkaufsliste</h2>
             <input
                 type="text"
+                className="text-black"
                 value={neuesElement}
                 onChange={(e) => setNeuesElement(e.target.value)}
-                placeholder="Neues Element"
+                placeholder="Mach rin!"
             />
-            <button onClick={addToList}>Hinzufügen</button>
+            <button className="text-green-500" onClick={addToList}>yallah rin</button>
 
             <ul>
                 {einkaufsliste.map((item, index) => (
                     <li key={index}>
-                        {item} <button onClick={() => removeFromList(item)}>Entfernen</button>
+                        <div className="flex flex-row justify-between">
+                            <div>
+                                {item} 
+                            </div>
+                            <div>
+                                <button className="text-red-500" onClick={() => removeFromList(item)}>yallah weg</button>
+                            </div>
+                        </div>
                     </li>
                 ))}
             </ul>
