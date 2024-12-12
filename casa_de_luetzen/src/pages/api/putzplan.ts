@@ -1,3 +1,5 @@
+import { NextApiRequest, NextApiResponse } from "next";
+
 const createPutzplan = (): Array<{ Woche: string; Flur: string; Bad: string; Küche: string }> => {
   const personen = ["Taro", "Bela", "Emilio"];
 
@@ -5,7 +7,7 @@ const createPutzplan = (): Array<{ Woche: string; Flur: string; Bad: string; Kü
 
   console.log("Aktuelle Woche: ", currentWeek)
 
-  let putzplan: Array<{ Woche: string; Flur: string; Bad: string; Küche: string }> = [];
+  const putzplan: Array<{ Woche: string; Flur: string; Bad: string; Küche: string }> = [];
   putzplan.push({
       Woche: "Diese Woche",
       Flur: personen[currentWeek % personen.length],
@@ -15,7 +17,7 @@ const createPutzplan = (): Array<{ Woche: string; Flur: string; Bad: string; Kü
   return putzplan;
 };
 
-export default function handler(req: any, res: any): void {
+export default function handler(req: NextApiRequest, res: NextApiResponse): void {
   const plan = createPutzplan();
   res.status(200).json(plan);
 }
