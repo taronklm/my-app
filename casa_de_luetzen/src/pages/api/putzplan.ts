@@ -10,8 +10,8 @@ const createPutzplan = (): Array<{ Woche: string; Flur: string; Bad: string; Kü
   const putzplan: Array<{ Woche: string; Flur: string; Bad: string; Küche: string }> = [];
   putzplan.push({
       Woche: "Diese Woche",
-      Flur: personen[currentWeek % personen.length],
-      Bad: personen[(currentWeek + 1) % personen.length],
+      Flur: personen[(currentWeek + 1)% personen.length],
+      Bad: personen[(currentWeek) % personen.length],
       Küche: personen[(currentWeek + 2) % personen.length],
   });
   return putzplan;

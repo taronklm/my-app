@@ -22,28 +22,30 @@ export default function Home() {
   }, []);
 
   return (
-      <div className="container">
-          <h1>Wöchentlicher Putzplan</h1>
-          <table border={1}>
+      <div className="container m-auto">
+        <div className="flex flex-col">
+          <h1 className="text-center">Wöchentlicher Putzplan</h1>
+          <table className="table-auto border border-slate-500">
               <thead>
                   <tr>
-                      <th>Woche</th>
-                      <th>Flur</th>
-                      <th>Bad</th>
-                      <th>Küche</th>
+                      <th className="border border-slate-600"></th>
+                      <th className="border border-slate-600">Flur</th>
+                      <th className="border border-slate-600">Bad</th>
+                      <th className="border border-slate-600">Küche</th>
                   </tr>
               </thead>
               <tbody>
                   {putzplan.map((row, index) => (
                       <tr key={index}>
-                          <td>{row.Woche}</td>
-                          <td>{row.Flur}</td>
-                          <td>{row.Bad}</td>
-                          <td>{row.Küche}</td>
+                          <td className="border border-slate-700 text-center">{row.Woche}</td>
+                          <td className="border border-slate-700 text-center">{row.Flur}</td>
+                          <td className="border border-slate-700 text-center">{row.Bad}</td>
+                          <td className="border border-slate-700 text-center">{row.Küche}</td>
                       </tr>
                   ))}
               </tbody>
           </table>
+        </div>
       </div>
   );
 }
