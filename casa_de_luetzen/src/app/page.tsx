@@ -92,16 +92,16 @@ export default function Home() {
                 onChange={(e) => setNeuesElement(e.target.value)}
                 placeholder="Mach rin!"
             />
-            <button className="text-green-500" onClick={addToList}>yallah rin</button>
+            <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded" onClick={addToList}>yallah rin</button>
             <ul className="my-5">
                 {einkaufsliste.map((item, index) => (
                     <li key={index}>
-                        <div className="flex flex-row justify-between">
+                        <div className="flex flex-row justify-between items-center">
                             <div>
                                 {item} 
                             </div>
                             <div>
-                                <button className="text-red-500" onClick={() => removeFromList(item)}>yallah weg</button>
+                                <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" onClick={() => removeFromList(item)}>yallah weg</button>
                             </div>
                         </div>
                     </li>
